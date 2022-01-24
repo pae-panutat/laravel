@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 13, 2022 at 10:04 AM
+-- Generation Time: Jan 24, 2022 at 08:51 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.27
 
@@ -55,6 +55,14 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `fname`, `lname`, `created_at`, `updated_at`) VALUES
+(1, 'กดฟด', 'ฟกหด', '2022-01-24 00:44:27', '2022-01-24 00:44:27'),
+(2, 'ไท', 'ธนาวุฒิ', '2022-01-24 00:46:43', '2022-01-24 00:46:43');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -84,7 +92,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
