@@ -15,7 +15,10 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('user.index');
+        // return view('user.index');
+        $users = User::all()->toArray();
+        return view('user.index', compact('users'));
+        
     }
 
     /**

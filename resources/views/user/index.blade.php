@@ -8,6 +8,37 @@
         }
     </style>
     
-    <h1>Index</h1>
-    <a href="{{ route('user.create') }}" class="btn btn-success">เพิ่มข้อมูล</a>
+    <div class="container">
+        <div class"row">
+            <div class="col-md-12">
+                <br><br>
+                <div align="right"><a href="{{ route('user.create') }}" class="btn btn-success">เพิ่มข้อมูล</a></div><br>
+                <table class="table table-bordered table-striped">
+                    <tr>
+                        <th>#</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>วันเริ่มต้น</th>
+                        <th>แก้ไขล่าสุด</th>
+                        <th>แก้ไข</th>
+                        <th>ลบ</th>
+                    </tr>
+
+                    @foreach($users as $row)
+                    <tr>
+                        <td>{{ $row['id'] }}</td>
+                        <td>{{ $row['fname'] }}</td>
+                        <td>{{ $row['lname'] }}</td>
+                        <td>{{ $row['created_at'] }}</td>
+                        <td>{{ $row['updated_at'] }}</td>
+                        <td><a href="" class="btn btn-warning">แก้ไข</a></td>
+                        <td><a href="" class="btn btn-danger">ลบ</a></td>
+                    </tr>
+                    @endforeach
+                </table>
+            </div>
+        </div>
+        
+    </div>
+   
 @stop
