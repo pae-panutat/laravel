@@ -32,7 +32,12 @@
                         <td>{{ $row['created_at'] }}</td>
                         <td>{{ $row['updated_at'] }}</td>
                         <td><a href="" class="btn btn-warning">แก้ไข</a></td>
-                        <td><a href="" class="btn btn-danger">ลบ</a></td>
+                        <td>
+                            <form method="post" class="delete_form" action="{{ action('UserController@destroy', $row['id']) }}"> {{ csrf_field() }}
+                                <input type="hidden" name="_method" value="DELETE" />
+                                <button type="submit" class="btn btn-danger">ลบ</button>
+                            </form>
+                        </td>
                     </tr>
                     @endforeach
                 </table>
