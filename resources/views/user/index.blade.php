@@ -11,7 +11,24 @@
     <div class="container">
         <div class"row">
             <div class="col-md-12">
-                <br><br>
+            <br><br>
+
+                @if(count($errors) > 0)
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach($errors->all() as $errors)
+                        <li>{{ $errors }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
+
+                @if(\Session::has('success'))
+                    <div class="alert alert-success">
+                        <p>{{ \Session::get('success') }}</p>
+                    </div>
+                @endif
+
                 <div align="right"><a href="{{ route('user.create') }}" class="btn btn-success">เพิ่มข้อมูล</a></div><br>
                 <table class="table table-bordered table-striped">
                     <tr>
