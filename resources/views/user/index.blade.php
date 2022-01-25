@@ -43,7 +43,16 @@
                 </table>
             </div>
         </div>
-        
     </div>
-   
+    <script>
+        $( document ).ready(function() {
+            $('.delete_form').on('submit', function(){
+                if(confirm('delete?')){
+                    return true;
+                } else {
+                    return false;
+                }
+            })            
+        });
+    </script>
 @stop

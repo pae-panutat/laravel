@@ -92,6 +92,9 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // dd($id);
+        $user = User::find($id);
+        $user->delete();
+        return redirect()->route('user.index')->with('success', 'ลบข้อมูลเรียบร้อย');
     }
 }
